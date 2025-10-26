@@ -1,0 +1,58 @@
+:root{
+  --bg:#0b0d0f;
+  --panel:#141619;
+  --muted:#9aa0a6;
+  --accent:#ffd54a;
+  --accent-dark:#ffb300;
+  --radius:12px;
+  --container:920px;
+  --wa-yellow:#ffd54a;
+  --wa-text:#111;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Segoe UI, Tahoma, Arial;direction:rtl}
+body{background:linear-gradient(180deg,var(--bg), #050506);color:#e6eef6;-webkit-font-smoothing:antialiased}
+
+/* header with larger logo on the right */
+.topbar{background:rgba(10,12,14,0.6);padding:16px 20px;display:flex;justify-content:flex-end;align-items:center}
+.logo-large{width:72px;height:72px;border-radius:10px;object-fit:cover;border:1px solid rgba(255,255,255,0.04)}
+
+/* container */
+.container{max-width:var(--container);margin:28px auto;padding:0 18px}
+.title{text-align:center;margin:0 0 18px;font-size:22px;color:#fff}
+
+/* grid 2x2 */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;align-items:stretch}
+.card-link{display:block;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.6);transition:transform .16s ease; background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.05))}
+.card-link:hover{transform:translateY(-6px)}
+.product{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border:1px solid rgba(255,255,255,0.03)}
+
+/* footer */
+.footer{text-align:center;padding:18px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02)}
+
+/* product page common */
+.product-wrap{max-width:980px;margin:30px auto;padding:18px}
+.product-hero{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start}
+@media (max-width:880px){.product-hero{grid-template-columns:1fr;}}
+.product-image{background:var(--panel);border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:18px}
+.product-image img{width:100%;height:100%;object-fit:contain;display:block;max-height:600px}
+
+/* right column card */
+.info-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.04));padding:16px;border-radius:12px}
+.info-card h1{margin:0 0 10px;font-size:20px}
+.price{font-weight:900;color:var(--accent);margin:8px 0}
+.msg{color:var(--muted);margin:8px 0}
+
+/* زر واتساب أصفر مربع مع خط أسود ومظهر واضح */
+.wa-btn{
+  display:inline-block;background:var(--wa-yellow);color:var(--wa-text);
+  padding:12px 14px;border-radius:8px;text-decoration:none;font-weight:800;border:2px solid #000;
+}
+
+/* Responsive tweaks */
+@media (max-width:520px){
+  .grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .logo-large{width:56px;height:56px}
+  .product-image img{max-height:320px}
+}
